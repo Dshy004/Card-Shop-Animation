@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Shop Animation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Font-awesome/css/all.css">
+</head>
+<body>
+    <div class="container" id="produits"></div>
+
+    <script>
+        var produits = [
+            { nom: "Pomme", prix: "2€" },
+            { nom: "Fraise", prix: "2€" },
+            { nom: "Ananas", prix: "2€" },
+            { nom: "Orange", prix: "2€" }
+        ];
+
+        var conteneurProduits = document.getElementById("produits");
+
+        for (var i = 0; i <= produits.length; i++) {
+            var cadre = document.createElement("div");
+            cadre.className = "cadre";
+
+            cadre.innerHTML = `
+                <div class="cadre-content">
+                    <h2>${produits[i].nom}</h2>
+                    <h3>Prix: <span>${produits[i].prix}</span></h3>
+                    <button>Acheter</button>
+                </div>
+            `;
+
+            conteneurProduits.appendChild(cadre);
+        }
+    </script>
+</body>
+</html>

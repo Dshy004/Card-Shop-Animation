@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+body {
+    background-color: #1d1d1d;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.cadre {
+    width: 15%;
+    height: 200px;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 0 5px 0 #eeeeee;
+    border-radius: 6px;
+    cursor: pointer;
+    background-position: center center;
+    background-size: cover;
+    transition: all 0.5s ease-out;
+}
+
+.cadre:nth-child(1) { background-image: url(Images/img-1.png); }
+.cadre:nth-child(2) { background-image: url(Images/img-2.png); }
+.cadre:nth-child(3) { background-image: url(Images/img-3.png); }
+.cadre:nth-child(4) { background-image: url(Images/img-4.png); }
+
+.cadre-content {
+    display: none;
+    width: 100%;
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    color: #eeeeee;
+}
+
+.cadre:hover .cadre-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    animation: slideFront 0.3s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slideFront {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.cadre-content h2 {
+    text-transform: uppercase;
+    border-top: 2px solid #fedd58;
+    border-bottom: 2px solid #fedd58;
+    font-weight: 100;
+    font-size: 16px;
+}
+
+.cadre-content h3 {
+    margin: 15px 0;
+    font-size: 30px;
+    font-weight: 200;
+    color: #fedd58;
+}
+
+.cadre-content h3 span {
+    color: #eeeeee;
+}
+
+.cadre-content button {
+    background-color: #1d1d1d;
+    color: #eeeeee;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 400;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+}
+
+.cadre-content button:focus {
+    transform: scale(0.9);
+}
+
+/* Responsive */
+@media screen and (max-width: 900px) {
+    .cadre { width: 35%; margin: 10px; }
+}
+
+@media screen and (max-width: 600px) {
+    .cadre { width: 42%; }
+}
+
+@media screen and (max-width: 310px) {
+    .cadre-content h2 { font-size: 15px; }
+    .cadre-content h3 { font-size: 20px; }
+}
